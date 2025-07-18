@@ -1,15 +1,34 @@
-<!-- <app-product-list></app-product-list>
-<app-category-list></app-category-list>
-<app-product-detail></app-product-detail>
-<app-user-list></app-user-list> -->
+<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">SU25 Shop</a>
 
-<nav>
-  <a routerLink="/">Trang chủ</a>
-  <a routerLink="/products">Sản phẩm</a>
-  <a routerLink="/category">Danh mục</a>
-  <a routerLink="/user">Người dùng</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">Sản phẩm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/category" routerLinkActive="active">Danh mục</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user" routerLinkActive="active">Người dùng</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
+
 <router-outlet></router-outlet>
-
-
-
