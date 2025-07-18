@@ -10,9 +10,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProductList {
   products = [
-    { id: 1, name: 'Laptop', price: 1000, inStock: true },
-    { id: 2, name: 'Phone', price: 500, inStock: false },
-    { id: 3, name: 'Tablet', price: 300, inStock: true },
+    { id: 1, name: 'Laptop', price: 1000,image:
+      'https://fdn.gsmarena.com/imgroot/reviews/24/apple-iphone-16/lifestyle/-1024w2/gsmarena_001.jpg', inStock: true },
+    { id: 2, name: 'Phone', price: 500,image:
+      'https://fdn.gsmarena.com/imgroot/reviews/24/apple-iphone-16/lifestyle/-1024w2/gsmarena_001.jpg', inStock: false },
+    { id: 3, name: 'Tablet', price: 300,image:
+      'https://fdn.gsmarena.com/imgroot/reviews/24/apple-iphone-16/lifestyle/-1024w2/gsmarena_001.jpg', inStock: true },
   ];
 
   filterText = '';
