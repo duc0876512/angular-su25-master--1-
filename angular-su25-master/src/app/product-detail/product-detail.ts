@@ -1,15 +1,19 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-product-list',
-  imports: [CommonModule, FormsModule,RouterLink],
-  templateUrl: './product-list.html',
-  styleUrl: './product-list.css',
+  selector: 'app-product-detail',
+  standalone: true,
+  imports: [CommonModule,RouterLink],
+  templateUrl: './product-detail.html',
+  styleUrl: './product-detail.css',
 })
-export class ProductList {
+export class ProductDetail implements OnInit {
+  product: any = null;
+  productId: number | null = null;
+
   products = [
     { id: 1, name: 'Laptop', price: 1000,image:
       'https://fdn.gsmarena.com/imgroot/reviews/24/apple-iphone-16/lifestyle/-1024w2/gsmarena_001.jpg', inStock: true },
@@ -19,11 +23,12 @@ export class ProductList {
       'https://fdn.gsmarena.com/imgroot/reviews/24/apple-iphone-16/lifestyle/-1024w2/gsmarena_001.jpg', inStock: true },
   ];
 
-  filterText = '';
+  constructor(private route: ActivatedRoute) {}
 
-  filterProducts() {
-    return this.products.filter((product) =>
-      product.name.toLowerCase().includes(this.filterText.toLowerCase())
-    );
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.productId = Number(params.get('id'));
+      this.product = this.products.find(p => p.id === this.productId);
+    });
   }
 }

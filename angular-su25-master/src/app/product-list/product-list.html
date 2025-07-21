@@ -23,7 +23,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let product of filterProducts()">
-          <td>{{ product.id }}</td>
+          <td>
+       <a [routerLink]="['/product', product.id]">
+       {{ product.id }}
+        </a>
+       </td>
           <td class="text-uppercase">{{ product.name }}</td>
           <td>{{ product.price | currency : "VND" }}</td>
           <td>

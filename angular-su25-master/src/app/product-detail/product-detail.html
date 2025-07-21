@@ -1,0 +1,38 @@
+<div class="product-detail-container">
+  <h2 class="title">Chi tiết sản phẩm</h2>
+  
+  <table class="table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="product; else notFound">
+        <td>  <a [routerLink]="['/product', product.id, 'detail']">
+            {{ product.id }}
+          </a></td>
+        <td class="text-uppercase">{{ product.name }}</td>
+        <td>{{ product.price | currency: 'VND' }}</td>
+        <td>
+          <img [src]="product.image" [alt]="product.name" class="img-thumbnail" style="max-width: 80px;" />
+        </td>
+        <td>
+          <span
+            class="fw-bold"
+            [ngClass]="product.inStock ? 'text-success' : 'text-danger'"
+          >
+            {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #notFound>
+    <p class="text-danger mt-4">Sản phẩm không tồn tại.</p>
+  </ng-template>
+</div>
