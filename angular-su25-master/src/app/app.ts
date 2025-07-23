@@ -4,10 +4,10 @@ import { ProductList } from './product-list/product-list';
 import { CategoryList } from './category-list/category-list';
 import { ProductDetail } from './product-detail/product-detail';
 import { UserListComponent  } from "./user-list/user-list";
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ProductList, CategoryList, ProductDetail, RouterLink, UserListComponent ],
+  imports: [RouterOutlet, ProductList, CategoryList, ProductDetail, RouterLink, FormsModule, UserListComponent ],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
